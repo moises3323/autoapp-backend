@@ -1,1 +1,3 @@
-export * as autoSchema from "./auto.schema";
+module.exports = {
+  autoSchema: require("./auto.schema"),
+};

@@ -1,5 +1,5 @@
-import CryptoJS from "crypto-js";
-import yenv from "yenv";
+const CryptoJS = require("crypto-js");
+const yenv = require("yenv");
 
 const env = yenv();
 const SECRET_KEY = env.CRYPTO.SECRET_KEY;

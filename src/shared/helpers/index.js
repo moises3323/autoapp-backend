@@ -1,9 +1,11 @@
-export * as response from "./response.helper";
-export * as routesSetup from "./routesSetup.helper";
-export * as printLog from "./printLog.helper";
-export * as cryptoUtil from "./crypto.helper";
-export * as tokenUtil from "./token";
-export * as preInsert from "./preInsert.helper";
-export * as constants from "./constants.helper";
-export * as stringGenerator from "./stringGenerator.helper";
-export * as forms from "./forms.helper";
+module.exports = {
+  response: require("./response.helper"),
+  routesSetup: require("./routesSetup.helper"),
+  printLog: require("./printLog.helper"),
+  cryptoUtil: require("./crypto.helper"),
+  tokenUtil: require("./token"),
+  preInsert: require("./preInsert.helper"),
+  constants: require("./constants.helper"),
+  stringGenerator: require("./stringGenerator.helper"),
+  forms: require("./forms.helper"),
+};

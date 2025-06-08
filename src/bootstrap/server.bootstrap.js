@@ -1,6 +1,6 @@
-import http from "http";
-import yenv from "yenv";
-import { printLog } from "../shared/helpers";
+const http = require("http");
+const yenv = require("yenv");
+const { printLog } = require("../shared/helpers");
 
 const env = yenv();
 

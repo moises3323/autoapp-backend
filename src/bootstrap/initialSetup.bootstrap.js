@@ -1,5 +1,5 @@
-import Models from "../models";
-import { printLog } from "../shared/helpers";
+const Models = require("../models");
+const { printLog } = require("../shared/helpers");
 
 export const createRoles = async () => {
   const { Role, ContextType } = Models;

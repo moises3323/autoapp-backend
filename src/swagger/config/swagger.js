@@ -1,6 +1,6 @@
-import swaggerJsDoc from "swagger-jsdoc";
-import swaggerUi from "swagger-ui-express";
-import yenv from "yenv";
+const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+const yenv = require("yenv");
 
 const env = yenv();
 // Extended: https://swagger.io/specification/#infoObject
@@ -28,4 +28,4 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
-export { swaggerDocs, swaggerUi };
+module.exports = { swaggerDocs, swaggerUi };

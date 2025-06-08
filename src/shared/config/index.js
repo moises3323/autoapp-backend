@@ -1,1 +1,3 @@
-export * as ROLES from "./roles.config";
+module.exports = {
+  ROLES: require("./roles.config"),
+};

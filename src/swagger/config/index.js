@@ -1,1 +1,1 @@
-export * as swagger from "./swagger";
+module.exports = require("./swagger");

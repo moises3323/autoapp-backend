@@ -1,6 +1,6 @@
-import Sequelize from "sequelize";
-import yenv from "yenv";
-import { printLog } from "../shared/helpers";
+const Sequelize = require("sequelize");
+const yenv = require("yenv");
+const { printLog } = require("../shared/helpers");
 
 const env = yenv();
 
@@ -75,7 +75,7 @@ const synchronizeModels = async () => {
   });
 };
 
-export {
+module.exports = {
   inicialize,
   closeConnection,
   Sequelize,

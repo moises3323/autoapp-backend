@@ -1,3 +1,5 @@
-export * as server from "./server.bootstrap";
-export * as database from "./database.bootstrap";
-export * as initialSetup from "./initialSetup.bootstrap";
+module.exports = {
+  server: require("./server.bootstrap"),
+  database: require("./database.bootstrap"),
+  initialSetup: require("./initialSetup.bootstrap"),
+};
