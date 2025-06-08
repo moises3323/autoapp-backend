@@ -1,5 +1,4 @@
-
-
-export * as autoService from "./auto.service";
-
-//export * as smsService from "./sms.service";
+const autoService = require("./auto.service");
+module.exports = {
+  autoService,
+};

@@ -1,6 +1,6 @@
-import { database } from "../bootstrap";
+const { database } = require("../bootstrap");
 
-import AutoModel from "./Auto.model";
+const AutoModel = require("./Auto.model");
 
 const { connection, Sequelize } = database;
 
@@ -48,4 +48,4 @@ db.literal = Sequelize.literal;
 db.sequelize = connection;
 db.Sequelize = Sequelize;
 
-export default db;
+module.exports = db;

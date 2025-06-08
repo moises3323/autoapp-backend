@@ -1,1 +1,6 @@
-export * as autoController from "./auto.controller";
+
+const autoController = require("./auto.controller");
+
+module.exports = {
+  autoController,
+};

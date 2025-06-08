@@ -1,9 +1,9 @@
-import { autoService } from "../services";
-import { response, constants } from "../shared/helpers";
-/* import { schoolDto } from "../dtos"; */
-import { AutoMessages } from "../shared/messages";
+const { autoService } = require("../services");
+const { response, constants } = require("../shared/helpers");
+/* const { schoolDto } = require("../dtos"); */
+const { AutoMessages } = require("../shared/messages");
 
-export const get = async (req, res) => {
+const get = async (req, res) => {
   console.log("get all auto controller");
   const result = await autoService.get();
   res.json(
@@ -15,7 +15,7 @@ export const get = async (req, res) => {
   );
 };
 
-export const getOne = async (req, res) => {
+const getOne = async (req, res) => {
   const idAuto = req.params.id_auto;
   console.log("get by id auto controller: ", idAuto);
 
@@ -29,7 +29,7 @@ export const getOne = async (req, res) => {
   );
 };
 
-export const create = async (req, res) => {
+const create = async (req, res) => {
   let body = req.body;
 
   const result = await autoService.create(body);
@@ -42,7 +42,7 @@ export const create = async (req, res) => {
   );
 };
 
-export const update = async (req, res) => {
+const update = async (req, res) => {
   let body = req.body;
 
   const result = await autoService.update(body);
@@ -56,7 +56,7 @@ export const update = async (req, res) => {
   );
 };
 
-export const deleteOne = async (req, res) => {
+const deleteOne = async (req, res) => {
   const idAuto = req.params.id_auto;
   const result = await autoService.deleteOne(idAuto);
 
@@ -69,7 +69,7 @@ export const deleteOne = async (req, res) => {
   );
 };
 
-export const search = async (req, res) => {
+const search = async (req, res) => {
   const { query } = req;
   const { term, limit } = query;
   const result = await autoService.search({ term, limit });
@@ -79,4 +79,13 @@ export const search = async (req, res) => {
       data: result,
     })
   );
+};
+
+module.exports = {
+  get,
+  getOne,
+  create,
+  update,
+  deleteOne,
+  search,
 };

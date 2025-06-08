@@ -1,9 +1,9 @@
-import { Model } from "sequelize";
-import { preInsert } from "../shared/helpers";
+const { Model } = require("sequelize");
+const { preInsert } = require("../shared/helpers");
 
 class AutoModel extends Model {}
 
-export default (sequelize, DataTypes, commonFields) => {
+module.exports = (sequelize, DataTypes, commonFields) => {
   AutoModel.init(
     {
       id_auto: {

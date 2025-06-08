@@ -1,6 +1,6 @@
-import Models from "../models";
-import { preInsert } from "../shared/helpers";
-import { SucursalMessages } from "../shared/messages";
+const Models = require("../models");
+const { preInsert } = require("../shared/helpers");
+const { SucursalMessages } = require("../shared/messages");
 const { Auto, sequelize, Op } = Models;
 
 //attributes
@@ -15,7 +15,7 @@ const attAuto = [
   "price",
 ];
 
-export const get = async () => {
+async function get() {
     console.log("get all auto service");
   const result = await Auto.findAll({
     where: {
@@ -24,9 +24,9 @@ export const get = async () => {
     attributes: attAuto,
   });
   return result;
-};
+}
 
-export const getOne = async (id_auto) => {
+async function getOne(id_auto) {
   const result = await Auto.findOne({
     where: {
       id_auto,
@@ -35,9 +35,9 @@ export const getOne = async (id_auto) => {
     attributes: attAuto,
   });
   return result;
-};
+}
 
-export const create = async (body) => {
+async function create(body) {
   const result = await Auto.create(body);
 
   const resultFinal = await Auto.findOne({
@@ -46,9 +46,9 @@ export const create = async (body) => {
   });
 
   return resultFinal;
-};
+}
 
-export const update = async (body) => {
+async function update(body) {
   const id_auto = body.id_auto;
 
   await Auto.update(body, {
@@ -69,9 +69,9 @@ export const update = async (body) => {
     attributes: attAuto,
   });
   return result;
-};
+}
 
-export const deleteOne = async (id_auto) => {
+async function deleteOne(id_auto) {
   //gets common fields for deleting items logically
   const deletingData = preInsert.deleting();
   await sequelize.transaction(async (transaction) => {
@@ -87,9 +87,9 @@ export const deleteOne = async (id_auto) => {
   });
 
   return { id_auto };
-};
+}
 
-export const search = async ({ term, limit = 10 }) => {
+async function search({ term, limit = 10 }) {
   if (!term) return [];
   let whereConditionPersona = {
     [Op.or]: [
@@ -109,4 +109,13 @@ export const search = async ({ term, limit = 10 }) => {
   });
 
   return result;
+}
+
+module.exports = {
+  get,
+  getOne,
+  create,
+  update,
+  deleteOne,
+  search,
 };
