@@ -3,7 +3,7 @@ const path = require('path');
 const yaml = require('js-yaml');
 
 const rootEnvYamlPath = path.join(__dirname, '..', 'env.yaml');
-const appDir = path.join(__dirname, '..', 'app');
+const appDir = '/app';
 const appEnvYamlPath = path.join(appDir, 'env.yaml');
 
 // Ensure /app directory exists
