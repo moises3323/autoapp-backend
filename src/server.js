@@ -1,6 +1,6 @@
-import app from "./app";
-import { database, server, initialSetup } from "./bootstrap";
-import { printLog } from "./shared/helpers";
+const app = require("./app");
+const { database, server, initialSetup } = require("./bootstrap");
+const { printLog } = require("./shared/helpers");
 
 (async () => {
   try {

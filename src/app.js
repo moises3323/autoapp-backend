@@ -1,11 +1,11 @@
-import express from "express";
-import morgan from "morgan";
-import cors from "cors"
-import pkg from "../package.json";
-import * as routes from "./routes";
-import { errorHandler } from "./shared/middlewares";
-import { routesSetup } from "./shared/helpers";
-import { swagger } from "./swagger/config";
+const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
+const pkg = require("../package.json");
+const routes = require("./routes");
+const { errorHandler } = require("./shared/middlewares");
+const { routesSetup } = require("./shared/helpers");
+const { swagger } = require("./swagger/config");
 
 const app = express();
 const { swaggerDocs, swaggerUi } = swagger;
@@ -31,4 +31,4 @@ routesSetup.generateRoutes({ app, routes });
 app.use("**", errorHandler.notFound);
 app.use(errorHandler.generic);
 
-export default app;
+module.exports = app;
