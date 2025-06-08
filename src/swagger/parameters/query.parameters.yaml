@@ -1,0 +1,31 @@
+parameters:
+  idQuery:
+    in: query
+    name: idquery
+    description: element id
+    type: integer
+  idCampusQuery:
+    in: query
+    name: id_campus
+    type: number
+    example: 1
+  idsStatusQuery:
+    in: query
+    name: ids_status
+    type: array
+    items:
+      type: number
+    style: form
+    explode: false
+    example: [1, 2, 3]
+  idSchoolYearQuery:
+    in: query
+    name: id_school_year
+    type: number
+    example: 1
+    required: true
+  lotteryRolledQuery:
+    in: path
+    name: lotteryRolled
+    description: Returns data only if lottery is rolled, send 1 to apply the filter
+    example: 1

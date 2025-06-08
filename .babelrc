@@ -1,0 +1,13 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            /* Para compilacion de funcionalidades que requieran async/await */
+            {
+                "targets": {
+                    "node": "10"
+                }
+            }
+        ]
+    ]
+}

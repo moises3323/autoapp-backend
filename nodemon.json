@@ -1,0 +1,17 @@
+{
+    "watch":["src/"],
+    "ext": "js json",
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "ignore": [
+        "node_modules",
+        "cache",
+        "dist",
+        "reports",
+        "test",
+        ".git"
+    ],
+    "verbose": false,
+    "restartable": "r"
+}

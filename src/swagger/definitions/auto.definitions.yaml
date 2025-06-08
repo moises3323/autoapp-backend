@@ -1,0 +1,65 @@
+definitions:
+  autoCreatePOST:
+    type: object
+    properties:
+      name:
+        type: string
+        example: Carrito
+      brand:
+        type: string
+        example: Honda
+      model:
+        type: string
+        example: Civic
+      year:
+        type: number
+        example: 2009
+      description:
+        type: string
+        example: This is a auto description.
+      imageUrl:
+        type: string
+      price:
+        type: number
+    required:
+      - name
+      - brand
+      - model
+      - year
+      - description
+      - imageUrl
+      - price
+
+  autoUpdatePUT:
+    type: object
+    properties:
+      id_auto:
+        type: number
+        example: 1
+      name:
+        type: string
+        example: Carrito
+      brand:
+        type: string
+        example: Honda
+      model:
+        type: string
+        example: Civic
+      year:
+        type: number
+        example: 2009
+      description:
+        type: string
+        example: This is a auto description.
+      imageUrl:
+        type: string
+      price:
+        type: number
+    required:
+      - name
+      - brand
+      - model
+      - year
+      - description
+      - imageUrl
+      - price

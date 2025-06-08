@@ -1,0 +1,16 @@
+parameters:
+  autoCreate:
+    in: body
+    name: body
+    description: body example for auto priorities create or update
+    required: true
+    schema:
+      $ref: "#/definitions/autoCreatePOST"
+
+  autoCreateUpdate:
+    in: body
+    name: body
+    description: body example for auto priorities create or update
+    required: true
+    schema:
+      $ref: "#/definitions/autoUpdatePUT"

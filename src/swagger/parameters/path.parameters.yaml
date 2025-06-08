@@ -1,0 +1,14 @@
+parameters:
+  idPath:
+    in: path
+    name: id
+    description: id del elemento
+    type: string
+    required: true
+
+  idAuto:
+    in: path
+    name: id_auto
+    description: identifier of a auto
+    example: 1
+    required: true

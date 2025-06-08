@@ -1,0 +1,11 @@
+# dependencies
+/node_modules
+# production
+/build
+/cache
+# misc
+.DS_Store
+
+/.idea
+/.vscode
+/.service_account_gcp.json
