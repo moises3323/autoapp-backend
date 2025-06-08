@@ -1,4 +1,4 @@
-require("../scripts/generateEnvYaml");
+//require("../scripts/generateEnvYaml");
 const app = require("./app");
 const { database, server, initialSetup } = require("./bootstrap");
 const { printLog } = require("./shared/helpers");
