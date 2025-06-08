@@ -6,9 +6,9 @@ const { printLog } = require("./shared/helpers");
 (async () => {
   try {
 
-    await server.inicialize(app);
     await database.inicialize();
     await database.synchronizeModels();
+    await server.inicialize(app);
     //await initialSetup.createRoles();
   } catch (error) {
     printLog.error(error);
