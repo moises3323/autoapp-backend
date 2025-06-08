@@ -1,7 +1,3 @@
-import auto from "./auto.routes";
+const auto = require("./auto.routes");
 
-/* 
-Se debe exportar el objeto de rutas con el nombre que debe tomar la ruta base
-ejemplo: para "/api/products", el objeto de rutas debe llamarse "products"
-*/
-export { auto };
+module.exports = { auto };
