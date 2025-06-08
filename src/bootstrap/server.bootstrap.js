@@ -2,12 +2,11 @@ const http = require("http");
 const yenv = require("yenv");
 const { printLog } = require("../shared/helpers");
 
-const env = yenv();
 
 const inicialize = (app) => {
   return new Promise((resolve, reject) => {
     const server = http.createServer(app);
-    const port = process.env.PORT || env.PORT;
+    const port = process.env.PORT || 4000;
     server
       .listen(port, '0.0.0.0')
       .on("listening", () => {
