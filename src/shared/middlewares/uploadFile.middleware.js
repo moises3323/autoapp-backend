@@ -1,7 +1,7 @@
-import { Storage } from "@google-cloud/storage";
-import multer from "multer";
-import yenv from "yenv";
-import path from "path";
+const { Storage } = require("@google-cloud/storage");
+const multer = require("multer");
+const yenv = require("yenv");
+const path = require("path");
 
 const env = yenv();
 const allowedMimeTypes = ["image/jpeg", "image/png", "image/gif", "application/pdf"];
@@ -34,7 +34,7 @@ const multerMiddleware = (fieldName) =>
   }).single(fieldName);
 
 // Upload file to Google Cloud Storage
-export const uploadToBucketGCS = ({
+const uploadToBucketGCS = ({
   fieldName,
   required = true,
   passValidation,
@@ -85,4 +85,8 @@ export const uploadToBucketGCS = ({
 
       blobStream.end(req.file.buffer);
     });
+};
+
+module.exports = {
+  uploadToBucketGCS,
 };

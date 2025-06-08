@@ -1,12 +1,12 @@
-import Joi from "joi";
+const Joi = require("joi");
 
-export const GET = Joi.object({});
+const GET = Joi.object({});
 
-export const GETONE = Joi.object({
+const GETONE = Joi.object({
   id_auto: Joi.number().required(),
 });
 
-export const CREATE = Joi.object({
+const CREATE = Joi.object({
   name: Joi.string().required(),
   brand: Joi.string().required(),
   model: Joi.string().optional(),
@@ -16,7 +16,7 @@ export const CREATE = Joi.object({
   price: Joi.number().required(),
 });
 
-export const UPDATE = Joi.object({
+const UPDATE = Joi.object({
   id_auto: Joi.number().required(),
   name: Joi.string().required(),
   brand: Joi.string().required(),
@@ -27,11 +27,20 @@ export const UPDATE = Joi.object({
   price: Joi.number().required(),
 });
 
-export const DELETE = Joi.object({
+const DELETE = Joi.object({
   id_auto: Joi.number().required(),
 });
 
-export const SEARCH = Joi.object({
+const SEARCH = Joi.object({
   term: Joi.string().empty(""),
   limit: Joi.number().optional(),
 });
+
+module.exports = {
+  GET,
+  GETONE,
+  CREATE,
+  UPDATE,
+  DELETE,
+  SEARCH,
+};

@@ -1,7 +1,7 @@
-export const ERROR_TECNICO = "Technical error.";
-export const NON_EXISTENT_RECORD = "Record not found.";
+const ERROR_TECNICO = "Technical error.";
+const NON_EXISTENT_RECORD = "Record not found.";
 
-export const AutoMessages = {
+const AutoMessages = {
   success: {
     CREATE: "Auto creado.",
     UPDATE: "Auto actualizado.",
@@ -16,4 +16,10 @@ export const AutoMessages = {
     UPDATE: "Error al actualizar el Auto",
     DELETE: "Error al eliminar el Auto",
   },
+};
+
+module.exports = {
+  ERROR_TECNICO,
+  NON_EXISTENT_RECORD,
+  AutoMessages,
 };

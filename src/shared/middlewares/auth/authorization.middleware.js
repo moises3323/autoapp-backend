@@ -1,4 +1,4 @@
-export const canActivate = (...rolesAllowed) => {
+const canActivate = (...rolesAllowed) => {
   return (request, response, next) => {
     const { roles } = response.locals.payload;
 
@@ -12,4 +12,8 @@ export const canActivate = (...rolesAllowed) => {
       next(error);
     }
   };
+};
+
+module.exports = {
+  canActivate,
 };

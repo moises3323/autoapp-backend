@@ -1,7 +1,7 @@
-import jwt from "jsonwebtoken";
-import { printLog } from ".";
+const jwt = require("jsonwebtoken");
+const { printLog } = require(".");
 
-export const generateToken = ({ payload = {}, secretKey, expiresIn }) => {
+const generateToken = ({ payload = {}, secretKey, expiresIn }) => {
   const options = {
     expiresIn,
   };
@@ -9,7 +9,7 @@ export const generateToken = ({ payload = {}, secretKey, expiresIn }) => {
   return jwt.sign(payload, secretKey, options);
 };
 
-export const validateAccessToken = ({ accessToken, secretKey }) => {
+const validateAccessToken = ({ accessToken, secretKey }) => {
   return new Promise((resolve, reject) => {
     try {
       const payload = jwt.verify(accessToken, secretKey);
@@ -30,7 +30,7 @@ export const validateAccessToken = ({ accessToken, secretKey }) => {
   });
 };
 
-export const validateRefreshToken = ({ refreshToken, secretKey }) => {
+const validateRefreshToken = ({ refreshToken, secretKey }) => {
   return new Promise((resolve, reject) => {
     try {
       const payload = jwt.verify(refreshToken, secretKey);
@@ -49,4 +49,10 @@ export const validateRefreshToken = ({ refreshToken, secretKey }) => {
       }
     }
   });
+};
+
+module.exports = {
+  generateToken,
+  validateAccessToken,
+  validateRefreshToken,
 };

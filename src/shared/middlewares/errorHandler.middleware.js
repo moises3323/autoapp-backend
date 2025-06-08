@@ -1,10 +1,10 @@
-import yenv from "yenv";
-import { printLog, response } from "../helpers";
-import { v4 as uuidv4 } from "uuid";
+const yenv = require("yenv");
+const { printLog, response } = require("../helpers");
+const { v4: uuidv4 } = require("uuid");
 
 const env = yenv();
 
-export const notFound = (req, res, next) => {
+const notFound = (req, res, next) => {
   // const traceId = generateTrace();
   const error = new Error("Path not found");
   // error.traceId = traceId;
@@ -28,7 +28,7 @@ const validateError = (err) => {
   return err;
 };
 
-export const asyncError = (ftn) => {
+const asyncError = (ftn) => {
   return (req, res, next) => {
     ftn(req, res, next).catch((err) => {
       const traceId = uuidv4();
@@ -46,7 +46,7 @@ export const asyncError = (ftn) => {
   };
 };
 
-export const generic = (error, req, res, next) => {
+const generic = (error, req, res, next) => {
   const objError = {
     name: error.name,
     status: error.status ?? error.statusCode ?? 400,
@@ -62,4 +62,10 @@ export const generic = (error, req, res, next) => {
     .json(
       response.format({ traceId: error.traceId, name: "Error", data: objError })
     );
+};
+
+module.exports = {
+  notFound,
+  asyncError,
+  generic,
 };

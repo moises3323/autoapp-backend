@@ -1,4 +1,4 @@
-export const creating = () => {
+const creating = () => {
   if (!process.env.USERDATA) return { createdBy: 999999, updatedBy: 999999 };
   const userData = JSON.parse(process.env.USERDATA);
   return {
@@ -7,7 +7,7 @@ export const creating = () => {
   };
 };
 
-export const updating = () => {
+const updating = () => {
   if (!process.env.USERDATA) return { createdBy: 999999, updatedBy: 999999 };
   const userData = JSON.parse(process.env.USERDATA);
   return {
@@ -15,7 +15,7 @@ export const updating = () => {
   };
 };
 
-export const deleting = () => {
+const deleting = () => {
   const dateIso = new Date().toISOString();
   if (!process.env.USERDATA)
     return {
@@ -31,4 +31,10 @@ export const deleting = () => {
     deletedAt: dateIso.substring(0, 10) + " " + dateIso.substring(11, 19),
     deleted: true,
   };
+};
+
+module.exports = {
+  creating,
+  updating,
+  deleting,
 };

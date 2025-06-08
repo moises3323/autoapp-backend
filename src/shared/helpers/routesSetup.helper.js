@@ -3,7 +3,7 @@
  * @param {*} app
  * @param {*} routes
  */
-export const generateRoutes = ({ app, routes }) => {
+const generateRoutes = ({ app, routes }) => {
   for (const routeName in routes) {
     
     if (Object.hasOwnProperty.call(routes, routeName)) {
@@ -13,4 +13,8 @@ export const generateRoutes = ({ app, routes }) => {
       app.use(`/api/${parsedName}`, routes[routeName]);
     }
   }
+};
+
+module.exports = {
+  generateRoutes,
 };

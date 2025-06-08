@@ -1,4 +1,4 @@
-import Joi from "joi";
+const Joi = require("joi");
 
 const mergeParameters = (request) => {
   const properties = ["params", "body", "query"];
@@ -28,7 +28,7 @@ const mergeParameters = (request) => {
  * @param {*} schema
  * @returns
  */
-export const validateParams = (schema) => {
+const validateParams = (schema) => {
   return (request, response, next) => {
     const parameters = mergeParameters(request);
     const result = schema
@@ -55,4 +55,8 @@ export const validateParams = (schema) => {
 
     next();
   };
+};
+
+module.exports = {
+  validateParams,
 };

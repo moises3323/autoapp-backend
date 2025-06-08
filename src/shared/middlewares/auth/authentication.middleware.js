@@ -1,9 +1,9 @@
-import yenv from "yenv";
-import { tokenUtil } from "../../helpers";
+const yenv = require("yenv");
+const { tokenUtil } = require("../../helpers");
 
 const env = yenv();
 
-export const canActivate = (request, response, next) => {
+const canActivate = (request, response, next) => {
   const authorizationHeader = request?.headers["authorization"];
   if (authorizationHeader) {
     const partsAuthentication = authorizationHeader.split(" ");
@@ -34,4 +34,8 @@ export const canActivate = (request, response, next) => {
     error.status = 401;
     next(error);
   }
+};
+
+module.exports = {
+  canActivate,
 };
