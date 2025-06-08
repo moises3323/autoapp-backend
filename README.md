@@ -1,63 +1,97 @@
-🚀 Back-End JS (Node.js + Express + Sequelize)
+# 🚀 Back-End JS (Node.js + Express + Sequelize)
 
-Este backend fue desarrollado con Node.js, Express y Sequelize. Utiliza MySQL como base de datos y está diseñado para ejecutarse tanto localmente (vía Docker) como en producción (Railway).
+Este backend fue desarrollado con **Node.js**, **Express** y **Sequelize**. Utiliza **MySQL** como base de datos y está diseñado para ejecutarse tanto localmente con Docker como en producción con Railway.
 
-📦 Requisitos
+---
 
-Node.js >= 18
+## ✅ Requisitos
 
-Docker (para entorno local)
+- Node.js `>= 18`
+- Docker (para entorno local)
+- Railway CLI *(opcional para despliegue)*
 
-Railway CLI (opcional para despliegue)
+---
 
-🛠 Instalación local
+## 🔧 Instalación local
 
+```bash
 git clone https://github.com/moises3323/autoapp-backend.git
 cd autoapp-backend
 yarn install
+```
 
-🔐 Variables de entorno
+---
 
-Crea un archivo .env o usa directamente variables clásicas de entorno:
+## 🔐 Variables de entorno
 
+Puedes usar un archivo `env.yaml` para configurar las variables, o exportarlas directamente así:
+
+```env
 PORT=4000
 MYSQL_HOST=localhost
 MYSQL_PORT=3306
 MYSQL_DATABASE=autoapp
 MYSQL_USERNAME=root
 MYSQL_PASSWORD=root
+```
 
-🧪 Modo desarrollo (usando Docker)
+---
 
+## 🐳 Modo desarrollo con Docker
+
+```bash
 docker-compose up
+```
 
-Esto ejecutará tanto el backend como MySQL localmente en http://localhost:4000
+Esto levantará la base de datos MySQL y el backend localmente en el puerto **4000**.
 
-📜 Scripts disponibles
+---
 
-yarn dev      # Ejecuta con nodemon
-yarn build    # Compila y minifica con Babel + Gulp
-yarn start    # Ejecuta la versión compilada
+## 📜 Scripts disponibles
 
-🚀 Despliegue en Railway
+```bash
+yarn dev     # Ejecuta el servidor con nodemon
+yarn build   # Compila y minifica el código con Babel + Gulp
+yarn start   # Ejecuta el backend compilado
+```
 
-Crea un proyecto en Railway
+---
 
-Conecta tu repositorio de GitHub
+## ☁️ Despliegue en Railway
 
-Agrega las siguientes variables en "Variables de entorno":
+1. Crea un nuevo proyecto en Railway
+2. Conecta tu repositorio de GitHub
+3. Agrega las siguientes variables:
 
+```env
 MYSQL_HOST
 MYSQL_PORT
 MYSQL_DATABASE
 MYSQL_USERNAME
 MYSQL_PASSWORD
 PORT=4000
+```
 
-💡 Railway detectará automáticamente que necesitas una instancia de MySQL si agregas el plugin correspondiente.
+> Railway creará automáticamente una instancia de MySQL si agregas el plugin 🧩.
 
-✅ ¡Listo!
+---
 
-Ahora puedes acceder al backend desplegado desde Railway y consumir sus endpoints desde tu app Flutter o Postman.
+## 📁 Estructura del proyecto
 
-Autor: Moisés Santos — 2025
+```bash
+├── src
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   └── app.js
+├── server.js
+├── env.yaml
+├── docker-compose.yml
+```
+
+---
+
+## ✨ Créditos
+
+Autor: [Moises Santos](https://github.com/moises3323)
