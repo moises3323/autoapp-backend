@@ -1,3 +1,9 @@
-export const SUPER_ADMIN = "SuperAdmin";
-export const ADMIN = "Admin";
-export const OPERATOR = "Operator";
+const SUPER_ADMIN = "SuperAdmin";
+const ADMIN = "Admin";
+const OPERATOR = "Operator";
+
+module.exports = {
+  SUPER_ADMIN,
+  ADMIN,
+  OPERATOR,
+};

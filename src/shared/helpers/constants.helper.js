@@ -1,17 +1,17 @@
-export const fileCategory = {
+const fileCategory = {
   FORMS: 1,
   COMPLEMENTARY: 2,
   APPLICATION: 3,
 };
 
-export const contextType = {
+const contextType = {
   SYSTEM: 1,
   SCHOOL: 2,
   CAMPUS: 3,
   SCHOOL_MAINTAINER: 4,
 };
 
-export const applicationStatus = {
+const applicationStatus = {
   LEAD: 1,
   CONTACTED: 2,
   APPLIED: 3,
@@ -23,7 +23,7 @@ export const applicationStatus = {
   ENROLLED: 9,
 };
 
-export const _idsStatus = {
+const _idsStatus = {
   lead: 1,
   contacted: 2,
   applied: 3,
@@ -35,7 +35,7 @@ export const _idsStatus = {
   enrolled: 9,
 };
 
-export const _namesStatus = {
+const _namesStatus = {
   lead: "Lead",
   contacted: "Contacted",
   applied: "Applied",
@@ -49,7 +49,7 @@ export const _namesStatus = {
   selectedList: "Selected List",
 };
 
-export const _nameStatusById = {
+const _nameStatusById = {
   1: "Lead",
   2: "Contacted",
   3: "Applied",
@@ -61,7 +61,7 @@ export const _nameStatusById = {
   9: "Enrolled",
 };
 
-export const rols = {
+const rols = {
   SUPER_ADMIN: "SuperAdmin",
   ADMIN: "Admin",
   ADMINISTRATOR: "Administrator",
@@ -69,13 +69,25 @@ export const rols = {
   CAMPUS_USER: "Campus user",
 };
 
-export const formType = {
+const formType = {
   TYPEFORM: 1,
   GOOGLE_FORMS: 2,
 };
 
-export const emailType = {
+const emailType = {
   STATUS_CHANGE: 1,
   REMINDER: 2,
   MANUALLY_SENT: 3,
+};
+
+module.exports = {
+  fileCategory,
+  contextType,
+  applicationStatus,
+  _idsStatus,
+  _namesStatus,
+  _nameStatusById,
+  rols,
+  formType,
+  emailType,
 };

@@ -4,7 +4,7 @@ const { printLog } = require("../shared/helpers");
 
 const env = yenv();
 
-export const inicialize = (app) => {
+const inicialize = (app) => {
   return new Promise((resolve, reject) => {
     const server = http.createServer(app);
     server
@@ -18,4 +18,8 @@ export const inicialize = (app) => {
         reject(error);
       });
   });
+};
+
+module.exports = {
+  inicialize,
 };

@@ -1,7 +1,7 @@
 const Models = require("../models");
 const { printLog } = require("../shared/helpers");
 
-export const createRoles = async () => {
+const createRoles = async () => {
   const { Role, ContextType } = Models;
 
   try {
@@ -57,4 +57,8 @@ export const createRoles = async () => {
   } catch (error) {
     printLog.error(`Create Roles error ${error}`);
   }
+};
+
+module.exports = {
+  createRoles,
 };

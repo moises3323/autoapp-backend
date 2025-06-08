@@ -1,4 +1,4 @@
-export const typeFormToObject = ({ form, fieldsMap }) => {
+const typeFormToObject = ({ form, fieldsMap }) => {
   const formFields = form.form_response?.definition?.fields || [];
   const formAnswers = form.form_response?.answers || [];
 
@@ -27,7 +27,7 @@ export const typeFormToObject = ({ form, fieldsMap }) => {
   }, {});
 };
 
-export const googleFormToObject = ({ form, fieldsMap }) => {
+const googleFormToObject = ({ form, fieldsMap }) => {
   return Object.keys(form).reduce((acc, formFieldKey) => {
     formFieldKey = formFieldKey.trim();
     if (Object.keys(fieldsMap).includes(formFieldKey)) {
@@ -46,7 +46,7 @@ export const googleFormToObject = ({ form, fieldsMap }) => {
   }, {});
 };
 
-export const personalInformationFormMap = {
+const personalInformationFormMap = {
   Priority: "priority_item",
   "First name": "firstName",
   "Last name": "lastName",
@@ -57,7 +57,7 @@ export const personalInformationFormMap = {
   "Event preference": "event_preference",
 };
 
-export const contactedFormApplicantMap = {
+const contactedFormApplicantMap = {
   "Date of birth": "dateOfBirth",
   Address: "address",
   "Current school": "actualSchool",
@@ -71,8 +71,16 @@ export const contactedFormApplicantMap = {
   "Guardian's occupation": "guardianOccupation",
 };
 
-export const contactedFormApplicantionMap = {
+const contactedFormApplicantionMap = {
   Priority: "priority_item",
   "Application ID": "correlative",
   Grade: "grade",
+};
+
+module.exports = {
+  typeFormToObject,
+  googleFormToObject,
+  personalInformationFormMap,
+  contactedFormApplicantMap,
+  contactedFormApplicantionMap,
 };
