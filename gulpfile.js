@@ -1,7 +1,8 @@
-import gulp from "gulp";
+const gulp = require("gulp");
+const uglify = require("gulp-uglify-es").default;
+
 const { src, dest } = gulp;
-import uglify from "gulp-uglify-es/dist/index.js";
 
 const minify = () => src("./cache/**/*.js").pipe(uglify()).pipe(dest("./build"));
 
-export { minify };
+exports.minify = minify;

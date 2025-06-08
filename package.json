@@ -1,7 +1,6 @@
 {
-  "name": "2025-06-autoApp",
+  "name": "2025-06-autoapp",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +10,7 @@
     "start": "node src/server.js"
   },
   "keywords": [],
-  "author": "Rene Corado",
+  "author": "Moises Santos",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/storage": "^6.9.4",
