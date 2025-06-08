@@ -2,16 +2,14 @@ const app = require('./app');
 const { database, initialSetup } = require('./bootstrap');
 const { printLog } = require('./shared/helpers');
 
-const PORT = process.env.PORT || 4000;
-
 (async () => {
   try {
     await database.inicialize();
     await database.synchronizeModels();
 
-    // Solo aquí lanzamos el servidor
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+    const port = process.env.PORT || 4000;
+    app.listen(port, '0.0.0.0', () => {
+      console.log(`Server running on port ${port}`);
     });
   } catch (error) {
     printLog.error(error);
